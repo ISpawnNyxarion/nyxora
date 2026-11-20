@@ -88,3 +88,24 @@ button:disabled{opacity:.6}
 .bell{position:relative}.nd{position:absolute;top:-6px;right:-9px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--ac);color:#fff;font:600 10px/16px system-ui,sans-serif;text-align:center;font-style:normal}
 .unr{background:var(--as)}.ntr{cursor:pointer;border-bottom:1px solid var(--ln)}
 .th{display:flex;gap:12px;flex-wrap:wrap}.sw{width:36px;height:36px;border-radius:50%;border:2px solid var(--ln)}.sw.on{border-color:var(--tx)}
+.gear{display:grid;place-items:center}.gear svg{width:24px;height:24px}
+.ban{height:110px;background:linear-gradient(135deg,var(--as),var(--s2))}
+.pt{display:flex;justify-content:space-between;align-items:flex-end;margin-top:-42px}
+.avb .av{width:84px;height:84px;font-size:32px;border:4px solid var(--bg)}
+.pa{display:flex;align-items:center;gap:8px}
+.ib2{width:34px;height:34px;border-radius:50%;border:1px solid var(--ln);display:grid;place-items:center}.ib2 svg{width:18px;height:18px}
+.sep{height:1px;background:var(--ln);margin-top:6px}
+.card.rp{flex-direction:column;gap:6px}.cw{display:flex;gap:12px;width:100%}
+.rpl{display:flex;align-items:center;gap:6px;color:var(--mu);font-size:13px;margin-left:50px}.rpl svg{width:14px;height:14px}
+.act{flex-wrap:wrap;gap:14px;align-items:center}.act svg{width:18px;height:18px}
+.vw{display:flex;align-items:center;gap:6px;color:var(--mu)}.rpd{color:#34D399}
+.qt{border:1px solid var(--ln);border-radius:14px;padding:10px 12px;margin-top:10px;cursor:pointer}.qt .av{width:20px;height:20px;font-size:11px;border-width:0}.qt p{margin-top:4px}
+.mi{display:flex;align-items:center;gap:12px;padding:12px 4px;font-size:16px}.mi svg{width:22px;height:22px}
+.sl{border-top:1px solid var(--ln)}
+.srow{display:flex;justify-content:space-between;align-items:center;width:100%;padding:16px;border-bottom:1px solid var(--ln);text-align:left}.srow svg{width:20px;height:20px;color:var(--mu)}
+.trw{display:flex;align-items:center;gap:12px}.trw .sw{width:22px;height:22px;display:inline-block}
+.btn.danger{color:#F4212E;border-color:#F4212E;background:transparent}
+#splash{position:fixed;inset:0;z-index:100;background:#000;display:grid;place-items:center;transition:opacity .4s}
+#splash.out{opacity:0;pointer-events:none}
+#splash img{width:96px;height:96px;border-radius:22px;animation:sp 1.4s ease-in-out infinite}
+@keyframes sp{0%,100%{transform:scale(.92);opacity:.75}50%{transform:scale(1.06);opacity:1}}
