@@ -109,3 +109,11 @@ button:disabled{opacity:.6}
 #splash.out{opacity:0;pointer-events:none}
 #splash img{width:96px;height:96px;border-radius:22px;animation:sp 1.4s ease-in-out infinite}
 @keyframes sp{0%,100%{transform:scale(.92);opacity:.75}50%{transform:scale(1.06);opacity:1}}
+.ban{background-size:cover;background-position:center}
+.eb{display:inline-flex;align-items:center;gap:5px;padding:3px 11px;font-size:12px;justify-self:start}.eb svg{width:12px;height:12px}
+.bnr{display:grid;place-items:center;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--as),var(--s2)) center/cover;color:#fff;font-size:13px;cursor:pointer;text-shadow:0 1px 3px #000}
+.card.rep{margin-left:28px;border-left:2px solid var(--ln)}.cmr .av{width:32px;height:32px;font-size:14px}
+.opt{display:block;width:100%;text-align:left;margin-top:8px;padding:10px 12px;border:1px solid var(--ln);border-radius:10px;font-size:14px}
+.opt.ok{border-color:#34D399;background:rgba(52,211,153,.12)}.opt.no{border-color:#F4212E;background:rgba(244,33,46,.12)}
+.hk{background:var(--as)!important;color:var(--ac)}
+.hot .lnk{display:inline-block;margin-top:8px}
