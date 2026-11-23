@@ -234,10 +234,6 @@ async function openChatThemeSheet(){
   $('#sh').classList.add('on');
   syncChatThemePreview();
 }
-$('#sh').innerHTML=`<div class="bk" data-a="close"></div><div class="pnl"><div class="r"><b>Chat Theme &amp; Wallpaper</b><button type="button" class="mu" data-a="close">Close</button></div><div class="ctprev" id="ctprev"><div class="ctprevdim"></div><div class="ctbubble in">Hey! How’s your day going?</div><div class="ctbubble out">Loving this clean new chat look ✨</div></div><div class="ctgrid">${sws}</div><div class="r" style="gap:8px;flex-wrap:wrap"><label class="btn sm" style="cursor:pointer;flex:1;text-align:center">${I.img} Custom wallpaper photo<input type="file" id="ctfile" accept="image/*" hidden></label><button type="button" class="btn sm" id="ctclrimg" data-a="ctclearimg"${CT_DRAFT.previewUrl?'':' hidden'}>Remove photo</button></div><div class="cropctl" id="ctdimrow"${CT_DRAFT.previewUrl?'':' hidden'}><span class="mu sm">Dim <b id="ctdimval">${Math.round(CT_DRAFT.dim*100)}%</b></span><input type="range" id="ctdim" min="0" max="0.75" step="0.05" value="${CT_DRAFT.dim}" aria-label="Wallpaper dim"></div><div class="ctacts"><button type="button" class="btn pri" data-a="ctapply" data-id="chat">Apply to this chat</button><button type="button" class="btn" data-a="ctapply" data-id="all">Apply to all chats</button></div><button type="button" class="btn sm" data-a="ctreset">Reset to default</button></div>`;
-  $('#sh').classList.add('on');
-  syncChatThemePreview();
-}
 
 async function openDmByTarget(target){
   if(!target||!me)return;
