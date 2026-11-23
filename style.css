@@ -6,6 +6,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{background:var(--bg);color:var(--tx);font:15px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
 #app{max-width:600px;margin:auto;padding-bottom:90px}
+#app:has(.dmwrap){padding-bottom:0}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 button:focus-visible,input:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 input{font:inherit;color:var(--tx);background:var(--s2);border:1px solid var(--ln);border-radius:12px;padding:11px 14px;width:100%}
@@ -32,6 +33,8 @@ p{margin-top:3px;overflow-wrap:anywhere}
 .cms{margin-top:8px;display:grid;gap:8px}.cm{background:var(--s2);padding:8px 12px;border-radius:12px;font-size:14px}
 .cin{display:flex;gap:8px}
 .btn{padding:8px 16px;border-radius:10px;border:1px solid var(--ln);font-weight:500;font-size:14px;background:transparent}
+label.btn,button.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.btn svg{width:16px;height:16px;flex:none;display:inline-block;vertical-align:middle}
 .btn.sm{padding:5px 12px;font-size:13px}
 .btn.pri{background:var(--ac);color:#fff;border-color:var(--ac)}.wide{width:100%;margin-top:18px;padding:12px}
 .dp{margin:14px 16px;padding:14px 16px;border-radius:12px;background:var(--as);display:grid;gap:8px;justify-items:start}
@@ -42,7 +45,7 @@ p{margin-top:3px;overflow-wrap:anywhere}
 .nav .fab{background:var(--ac);color:#fff;border-radius:14px;width:44px;height:44px;display:grid;place-items:center;padding:0}
 #sh{position:fixed;inset:0;z-index:20;display:none}#sh.on{display:block}
 .bk{position:absolute;inset:0;background:rgba(0,0,0,.45)}
-.pnl{position:absolute;left:0;right:0;bottom:0;max-width:600px;margin:auto;background:var(--sf);border-radius:22px 22px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));display:grid;gap:12px}
+.pnl{position:absolute;left:0;right:0;bottom:0;max-width:600px;margin:auto;max-height:calc(100dvh - 24px - env(safe-area-inset-top,0px));overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:var(--sf);border-radius:22px 22px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));display:grid;gap:12px;align-content:start}
 .r{display:flex;justify-content:space-between;align-items:center}
 textarea{width:100%;min-height:120px;resize:none;border:0;outline:0;background:none;color:var(--tx);font:inherit;font-size:17px}
 .pvi{max-width:100%;max-height:150px;border-radius:12px}.ib svg{width:24px;height:24px;color:var(--ac);cursor:pointer}
@@ -204,16 +207,16 @@ button:disabled{opacity:.6}
 .cunr{flex:none;min-width:22px;height:22px;padding:0 7px;border-radius:99px;background:var(--ac);color:#fff;font-size:12px;font-weight:600;display:grid;place-items:center;font-variant-numeric:tabular-nums}
 .dmh{display:flex;align-items:center;gap:10px;min-width:0;flex:1;cursor:pointer}
 .dmh .av{width:32px;height:32px;font-size:13px}
-.dmwrap{display:flex;flex-direction:column;min-height:calc(100dvh - 126px - env(safe-area-inset-top,0px))}
-.dmmsgs{flex:1;padding:14px 16px 20px;display:flex;flex-direction:column;gap:8px}
+.dmwrap{display:flex;flex-direction:column;min-height:calc(100dvh - 112px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}
+.dmmsgs{flex:1;padding:14px 16px calc(170px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px}
 .dmb{max-width:100%;padding:10px 13px;border-radius:16px;font-size:15px;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid var(--ln);background:var(--s2)}
 .dmb.me{background:var(--ac);border-color:var(--ac);color:#fff}
 .dmb .dmt{display:block;margin-top:4px;font-size:11px;color:var(--mu);font-variant-numeric:tabular-nums}
 .dmb.me .dmt{color:rgba(255,255,255,.78);text-align:right}
-.dmin{position:sticky;bottom:calc(60px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--ln);padding:10px 16px;display:grid;gap:6px}
+.dmin{position:fixed;left:0;right:0;bottom:calc(60px + env(safe-area-inset-bottom,0px));max-width:600px;margin:0 auto;z-index:4;background:var(--bg);border-top:1px solid var(--ln);padding:10px 16px;display:grid;gap:6px}
 .dminr{display:flex;gap:8px;align-items:flex-end}
 .dminr textarea{min-height:42px;max-height:120px;border:1px solid var(--ln);border-radius:12px;padding:10px 12px;background:var(--s2);font-size:15px;resize:none;line-height:1.35}
-.dmlock{padding:12px 16px;border-top:1px solid var(--ln);background:var(--s2);color:var(--mu);font-size:13px;text-align:center}
+.dmlock{position:fixed;left:0;right:0;bottom:calc(60px + env(safe-area-inset-bottom,0px));max-width:600px;margin:0 auto;z-index:4;padding:12px 16px;border-top:1px solid var(--ln);background:var(--s2);color:var(--mu);font-size:13px;text-align:center}
 
 /* Phase 6: 7-Day Message Expiry, Edit Sent Messages & Daily DM Quotas */
 .dmnotice{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;margin-bottom:4px;border-radius:10px;background:var(--s2);border:1px solid var(--ln);font-size:12px;color:var(--mu)}
@@ -462,13 +465,14 @@ button:disabled{opacity:.6}
 .dmwrap{position:relative;overflow-x:clip}
 .dmbg{position:fixed;top:calc(52px + env(safe-area-inset-top,0px));bottom:calc(60px + env(safe-area-inset-bottom,0px));left:0;right:0;max-width:600px;margin:0 auto;z-index:0;pointer-events:none;background-size:cover;background-position:center;transition:opacity .2s ease}
 .dmbgdim{position:absolute;inset:0;background:#000;pointer-events:none;transition:opacity .15s ease}
-.dmmsgs,.dmin,.dmlock{position:relative;z-index:1}
+.dmmsgs{position:relative;z-index:1}
 .dmb{border-radius:18px;border-bottom-left-radius:6px;box-shadow:0 1px 2px rgba(0,0,0,.07);transition:box-shadow .16s ease}
 .dmb.me{border-radius:18px;border-bottom-left-radius:18px;border-bottom-right-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.14);background:var(--dm-out,var(--ac));border-color:var(--dm-out,var(--ac))}
 .dmwrap.haswall .dmb:not(.me):not(.del){background:var(--dm-inbg,var(--s2));color:var(--dm-intx,var(--tx));backdrop-filter:blur(10px);border-color:rgba(255,255,255,.16)}
 .dmwrap.haswall .dmb:not(.me):not(.del) .dmt{color:var(--dm-intx,var(--mu));opacity:.75}
 .dmwrap.haswall .dmnotice,.dmwrap.haswall .dmstkban{backdrop-filter:blur(10px)}
-.dmin.haswall{backdrop-filter:blur(12px)}
+.dmin.haswall{background:rgba(12,15,20,.88);backdrop-filter:blur(12px)}
+[data-theme="snow"] .dmin.haswall{background:rgba(255,255,255,.92)}
 .ctprev{position:relative;border-radius:14px;border:1px solid var(--ln);padding:14px;overflow:hidden;display:grid;gap:8px;min-height:132px;background-size:cover;background-position:center;align-content:center}
 .ctprevdim{position:absolute;inset:0;background:#000;pointer-events:none}
 .ctprev>*:not(.ctprevdim){position:relative;z-index:1}
